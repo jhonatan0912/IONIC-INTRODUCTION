@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-alert',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlertPage implements OnInit {
 
-  constructor() { }
+  constructor(private alertController: AlertController) { }
 
   ngOnInit() {
   }
+  onClick() {
+    this.presentAlert();
+  }
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      backdropDismiss: false, // No se puede hacer click fuera de la alerta, se tiene que pulsar el OK si o si
+      header: 'Alert',
+      subHeader: 'Important message',
+      message: 'This is an alert!',
+      buttons: ['OK'],
+    });
 
+    await alert.present();
+  }
 }
