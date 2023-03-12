@@ -51,6 +51,10 @@ const routes: Routes = [
     path: 'infinite',
     loadChildren: () => import('./pages/infinite/infinite.module').then( m => m.InfinitePageModule)
   },
+  {
+    path: 'slides',
+    loadChildren: () => import('./pages/slides/slides.module').then( m => m.SlidesPageModule)
+  },
 ];
 
 @NgModule({
