@@ -69,6 +69,11 @@ export class InicioPage implements OnInit {
       name: "Slides",
       redirectTo: "/slides"
     },
+    {
+      icon: "apps-outline",
+      name: "Details",
+      redirectTo: "/details"
+    },
   ];
 
   constructor() { }
